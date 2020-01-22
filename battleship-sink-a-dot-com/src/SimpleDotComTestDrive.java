@@ -5,7 +5,7 @@ public class SimpleDotComTestDrive{
 		// Instantiate SimpleDotCom object
 		SimpleDotCom dot = new SimpleDotCom();	
 		// Assign a location
-		int[] locations = {2,3,3};
+		int[] locations = {2,3,4};
 		dot.setLocationCells(locations);
 		// Create a String to represent user input
 		String userGuess = "2";
@@ -13,8 +13,8 @@ public class SimpleDotComTestDrive{
 		String result = dot.checkYourself(userGuess);
 		// set default testResult to failed
 		String testResult = "failed";
-		// Set testResult "passed" if the test outputs the expected "hit"
-		if(result.equals("hit")) {
+		// Set testResult "passed" if the test outputs the expected "hit" (don't test for case)
+		if(result.toLowerCase().equals("hit")) {
 			testResult = "passed";
 		}
 		// Print out the test result

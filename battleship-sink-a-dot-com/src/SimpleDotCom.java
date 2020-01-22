@@ -1,31 +1,39 @@
 
 public class SimpleDotCom {
-	
-	
+		
 	int[] locationCells;
 	int numOfHits;
 	
+	public void setLocationCells(int[] locations) {
+		locationCells = locations;
+	}
 	
-	public String checkYourself(String guess) {
-		
+	public String checkYourself(String stringGuess) {
 		//convert the user input to integer
+		int guess = Integer.parseInt(stringGuess);
+		// Declare a sring to hold result. default is miss
+		String result = "Miss";
+		
 		//REPEAT for each locationCell
+		for(int cell : locationCells) {
 			//COMPARE the user guess to cell
 			//IF guess match
+			if(guess == cell) {
+				result = "Hit";
 				//INCREMENT the number of hits
-				// FIND OUT IF it was last location cell
-				// IF number of hits is 3 => kill
-				// ELSE => Hit
-			//ELSE => Miss
-		//END REPEAT	
+				numOfHits++;
+				break;
+			}
+		}
 		
-		return "Hit, Miss or Kill";
+		// FIND OUT IF it was last location cell
+		if(numOfHits == locationCells.length) {
+			result = "Kill";
+		}
+		
+		System.out.println(result);
+		return result;
 	}
 	
-	public void setLocationCells(int[] locations) {
-		this.locationCells = locations;
-	}
 	
-	
-
 }
