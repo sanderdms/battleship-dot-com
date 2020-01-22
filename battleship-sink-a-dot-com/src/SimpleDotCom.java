@@ -22,8 +22,8 @@ public class SimpleDotCom {
 		return "Hit, Miss or Kill";
 	}
 	
-	public void setLocationCells() {
-		
+	public void setLocationCells(int[] locations) {
+		this.locationCells = locations;
 	}
 	
 	
