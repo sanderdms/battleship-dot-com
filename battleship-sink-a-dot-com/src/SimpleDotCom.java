@@ -1,34 +1,30 @@
+import java.util.ArrayList;
 
 public class SimpleDotCom {
 		
-	int[] locationCells;
+	private ArrayList<String> locationCells;
 	int numOfHits;
 	
-	public void setLocationCells(int[] locations) {
+	public void setLocationCells(ArrayList<String> locations) {
 		locationCells = locations;
 	}
 	
 	public String checkYourself(String stringGuess) {
-		//convert the user input to integer
-		int guess = Integer.parseInt(stringGuess);
 		// Declare a sring to hold result. default is miss
 		String result = "Miss";
+		int index = locationCells.indexOf(stringGuess);
 		
-		//REPEAT for each locationCell
-		for(int cell : locationCells) {
-			//COMPARE the user guess to cell
-			//IF guess match
-			if(guess == cell) {
+		// check if indexOf exists. It should return index int or -1 if not found
+		if(index >= 0) {
+			// remove it because it just got hit
+			locationCells.remove(index);
+			
+			//if there are no more cells left, its killed
+			if(locationCells.isEmpty()) {
+				result = "Kill";
+			}else {
 				result = "Hit";
-				//INCREMENT the number of hits
-				numOfHits++;
-				break;
-			}
-		}
-		
-		// FIND OUT IF it was last location cell
-		if(numOfHits == locationCells.length) {
-			result = "Kill";
+			}	
 		}
 		
 		System.out.println(result);

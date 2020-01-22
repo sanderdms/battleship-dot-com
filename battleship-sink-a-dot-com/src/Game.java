@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Game {
 
@@ -9,8 +10,11 @@ public class Game {
 		SimpleDotCom game = new SimpleDotCom();
 		
 		int randomStart = (int) Math.floor(Math.random()*10);
-		int[] locations = {randomStart, randomStart+1, randomStart+2};
-		game.setLocationCells(locations);
+		ArrayList<String> list = new ArrayList<String>();
+		list.add(Integer.toString(randomStart));
+		list.add(Integer.toString(randomStart+1));
+		list.add(Integer.toString(randomStart+2));
+		game.setLocationCells(list);
 		
 		Boolean isAlive = true;
 		
