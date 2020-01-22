@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class SimpleDotComTestDrive{
 	
@@ -5,7 +6,10 @@ public class SimpleDotComTestDrive{
 		// Instantiate SimpleDotCom object
 		SimpleDotCom dot = new SimpleDotCom();	
 		// Assign a location
-		int[] locations = {2,3,4};
+		ArrayList<String> locations = new ArrayList<String>();
+		locations.add("1");
+		locations.add("2");
+		locations.add("3");
 		dot.setLocationCells(locations);
 		// Create a String to represent user input
 		String userGuess = "2";
